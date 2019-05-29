@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <meta charset="utf-8">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+            <link rel="stylesheet" href="./css/style.css">
+    </head>
+        <body>
+
+            <div id="bodyPost" class="overlay" style="display: none">    
+                <div class="popupDiv">
+                    <form id="formPOST">
+                        <input type="text" placeholder="title" name="title" class="input">
+                        <select name="columnId" id="selectId">
+                            <option disabled>Выбери тип колонки</option>
+                        </select>
+                        <button id="goPOST">Ебашь</button>
+                        <button id="closeFormPost">Close</button>
+                    </form>
+                </div>
+            </div> 
+
+
+            <div id="bodyPatch" class="overlay" style="display: none"> 
+                    <div id="bodyPatch" class="popupDiv">
+                            <p id="infoIdCard"></p>
+                            <p id="infoIdColumn"></p>
+                            <textarea name="title" id="titleValue"></textarea>
+                            <button id="goPATCH">Ебашь</button>
+                            <button id="closeFormPatch">Close</button>
+                        
+                    </div>
+            </div>   
+
+
+            
+            <div id="conteiner" class="conteiner">
+                <div id='row' class="row">
+                    
+                </div>
+            </div>
+            <script src="./dist/bundle.js"></script>
+        </body>
+</html>

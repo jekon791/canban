@@ -1,0 +1,21 @@
+{
+  "name": "canban",
+  "version": "1.0.0",
+  "description": "",
+  "main": "board.js",
+  "dependencies": {
+    "webpack": "^4.31.0",
+    "webpack-cli": "^3.3.2"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^3.4.1"
+  },
+  "scripts": {
+    "start": "webpack-dev-server",
+    "webpack": "webpack -d",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

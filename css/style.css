@@ -1,0 +1,61 @@
+.col-sm {
+  height: 100px;
+  border-style: solid;
+  border-bottom-style: solid;
+  border-color: gray;
+  border-width: 1px;
+}
+.conteiner {
+  background-color: aquamarine;
+  height: 100px;
+  width: auto;
+}
+.ToDo {
+  border-style: solid;
+  border-bottom-style: solid;
+  border-color: gray;
+  border-width: 1px;
+  background-color: ghostwhite;
+}
+.In_Progress {
+  background-color: rgba(255, 255, 0, 0.253);
+  border-style: solid;
+  border-bottom-style: solid;
+  border-color: rgb(198, 211, 15);
+  border-width: 1px;
+}
+.Done {
+  background-color: rgb(78, 194, 140);
+  border-style: solid;
+  border-bottom-style: solid;
+  border-color: rgb(98, 218, 42);
+  border-width: 1px;
+}
+.overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(94, 144, 142, 0.335);
+  z-index: 100;
+}
+.popupDiv {
+  background-color: #0e0e0ac5;
+  color: #fff;
+  width: 90%;
+  max-width: 720px;
+  padding: 40px 30px;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  margin-left: -360px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(18, 17, 12, 0.5);
+}
+textarea{
+border: 1px solid #888;
+width:300px;
+height:150px
+
+}
