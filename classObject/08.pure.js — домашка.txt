@@ -1,0 +1,63 @@
+﻿Реалізуйте 2 класа Hamburger/Сheeseburger для того щоб наступний код працював: 
+
+
+const burger1 = new Hamburger(Hamburger.SIZE_SMALL);
+burger1.addSauce(Hamburger.SAUCE_MAYO);
+burger1.addSauce(Hamburger.SAUCE_MUSTARD);
+
+
+burger1.getPrice() // -> 40
+
+
+burger1.removeSauce(Hamburger.SAUCE_MAYO);
+
+
+burger1.getPrice() // -> 35
+burger1.getCalories() // -> 235
+
+
+const burger2 = new Сheeseburger(Сheeseburger.SIZE_BIG);
+burger2.addSauce(Сheeseburger.SAUCE_TARTAR);
+
+
+burger2.getPrice() // -> 77
+burger2.getCalories() // -> 437
+
+
+
+
+
+
+* Реалізувати клас Hamburger
+* В конструкторі приймати параметром розмір гамбургера (доступні значення: Hamburger.SIZE_SMALL, Hamburger.SIZE_BIG)
+* методи addSauce/removeSauce за допомогою яких можна додавати/видаляти соуси (Hamburger.SAUCE_MAYO, Hamburger.SAUCE_MUSTARD)
+* метод getPrice() повертає ціну враховуючи розмір і додані соуси
+* метод getCalories() повертає калорійність враховуючи розмір і додані соуси
+
+
+* Клас Сheeseburger який працє як Hamburger але у нього інша калорійність/ціна і доступний додатковий соус тартар (Сheeseburger.SAUCE_TARTAR)
+
+
+* під час неприпустимої операції треба кидати помилку 
+   * створення без передавання розміру, або з невідомим розміром (щось інше а ніж SIZE_SMALL/SIZE_BIG)
+   * додавання/видалення невідомого соуса, або неприпустимого соуса (нагадую що SAUCE_TARTAR повинен бути доступним лише для Сheeseburger, а інші 2 для обох)
+
+
+Ціни/калорії:
+
+Hamburger.SIZE_SMALL:  30 абстрактних грошей, 200 ккалорій
+Hamburger.SIZE_BIG:  50 грошей, 320 ккалорій
+
+
+Сheeseburger.SIZE_SMALL:  40 грошей, 250 ккалорій
+Сheeseburger.SIZE_BIG:  70 грошей, 400 ккалорій
+
+
+SAUCE_MAYO: +5 грошей, +30 ккалорій
+SAUCE_MUSTARD: +5 грошей, +35 ккалорій
+________________
+SAUCE_TARTAR (доступний лише для Сheeseburger): +7 грошей, +37 ккалорій
+
+
+
+Це завдання не стосується вашого гловного проекта з Канбаном і може знаходитись в окремому репозиторії (чи в репозиторії разом з домашкою 2-3)
