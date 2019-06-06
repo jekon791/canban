@@ -1,3 +1,4 @@
+import {dragOver,dropCard} from "./dragAdrop"
 export function createDOMcolumn(array) {
   let fragmentColumn = document.createDocumentFragment();
   array.forEach(function(item, index) {
@@ -12,17 +13,18 @@ export function createDOMcolumn(array) {
 
     //Сюда будут вставляться карточки предназначеные для этой колонки
     let body_div = document.createElement("div");
-    body_div.id = "column_body" + "_" + item.id;
-
+    body_div.dataset.columnbody = item.id;
+    body_div.addEventListener("dragover", dragOver)
+    body_div.addEventListener("drop", dropCard)
+    
     //Весь этот мусор собирается в одну DIV_box
     let div = document.createElement("div");
     div.append(text_id, text_title);
     div.append(body_div);
     div.className = "col-sm";
-    div.id = "columnId" + "_" + item.id;
+    div.dataset.column = item.id;
 
-    //Експерементальное говнецо 
-    createOptions(item.id)
+    createOptions(item)
     fragmentColumn.appendChild(div);
   });
 
@@ -35,10 +37,11 @@ function addDom(fragment) {
 }
 
 //Функция для генерации списка колонок
-function createOptions(opt){
+function createOptions(item){
   let elm = document.createElement("option")
-      elm.setAttribute("value", opt)
-      elm.append(opt)  
+      elm.setAttribute("value", item.id)
+      //elm.dataset.column.id = item.id
+      elm.append(item.title)  
       document.querySelector("#selectId").append(elm)
 }
 

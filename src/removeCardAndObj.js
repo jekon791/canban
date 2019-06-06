@@ -3,9 +3,9 @@ export function removeCardAndObj(e) {
 
   //Получаем ссылку на DIV 
   let parent = e.target.parentElement;
-
+  
   //Запрос на удаление
-  fetch("http://localhost:8089/api/card/" + parent.id, {
+  fetch("http://localhost:8089/api/card/" + parent.getAttribute("data-card"), {
     method: "DELETE"
   }).then(parent.remove());
 }

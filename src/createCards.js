@@ -1,3 +1,4 @@
+import{dragStart} from "./dragAdrop"
 import { removeCardAndObj } from "./removeCardAndObj";
 import { loadTargetCard } from "./cardPatch"
 
@@ -16,8 +17,9 @@ function createCards(item) {
   //Сама карточка
   let div_box = document.createElement("div");
   div_box.setAttribute("draggable", "true");
-  div_box.id = item.id;
+  div_box.dataset.card = item.id;
   div_box.className = "col-sm";
+  div_box.addEventListener("dragstart",dragStart)
 
   //Тасочка
   let div_content = document.createElement("div");
@@ -49,6 +51,6 @@ function createCards(item) {
 
   //Пуш карточки в DOM
   document
-    .getElementById("column_body" + "_" + item.columnId)
+    .querySelector(`[data-columnbody="${item.columnId}"]`)
     .appendChild(div_box);
 }
