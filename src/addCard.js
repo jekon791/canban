@@ -10,18 +10,22 @@ export function addCard(e){
         })
         .then(res=>res.json())
         .then(array=>whatIsIt(array))
+        seeOverlayPost()
 }
 
 //Создание и размещение кнопки addBtn для добавки карточек
 export function addBtn(){
     let btn = document.createElement("button")
         btn.append("Add card")
-        btn.addEventListener("click", seeOverlayPost)
+        btn.addEventListener("click", preparation)
         document.body.insertBefore(btn , document.body.firstChild)
 }
 //Эвент клик для кнопки addBtn на всплытие формы
-export function seeOverlayPost(e){
+export function preparation(e){
     e.preventDefault()
+    seeOverlayPost()
+}
+ function seeOverlayPost(){
     let way = document.getElementById("bodyPost")
     way.style.display == "none" ? way.style.display = 'block' :  way.style.display = 'none'  
 }

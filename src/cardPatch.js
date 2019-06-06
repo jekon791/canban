@@ -2,21 +2,23 @@ import{ whatIsIt } from './createCards'
 
 //Получение id карточки, её загрузки из сервере и отображение
 export function loadTargetCard(e) {
-  let parent = e.target.parentNode;
-  parent = parent.getAttribute("data-card");
+  let parentBtn = e.target.parentNode;
+  let cardId = parentBtn.getAttribute("data-card");
   let idCard = document.getElementById("infoIdCard");
   let idColumn = document.getElementById("infoIdColumn");
   let way = document.getElementById("titleValue");
   let btn = document.getElementById("goPATCH");
 
-  fetch("http://localhost:8089/api/card/" + parent, { method: "GET" })
+  fetch("http://localhost:8089/api/card/" + cardId, { method: "GET" })
     .then(resp => resp.json())
     .then(function(item) {
       way.value = item.title;
       idCard.innerText = "id карточки" + " " + item.id;
 
       //Переписать. Сейчас неоткудова взять title колонки
-      idColumn.innerText = "Колонка" + " " + item.title;
+      let getTitleColumn = parentBtn.closest('[data-columntitle]').getAttribute('data-columntitle')
+      console.log(getTitleColumn)
+      idColumn.innerText = "Колонка" + " " + getTitleColumn;
       btn.setAttribute("value", item.id);
     });
 
@@ -37,6 +39,7 @@ export function updateCard(e) {
     .then(function(arr){
       document.querySelector(`[data-card="${arr.id}"]`).remove()
       whatIsIt(arr)
+      seeOverlayPatch()
     })
 }
 

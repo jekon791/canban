@@ -10,10 +10,11 @@ export function createDOMcolumn(array) {
     //Тут записывается title колоночки
     let text_title = document.createElement("p");
     text_title.append(item.title);
-
+    
     //Сюда будут вставляться карточки предназначеные для этой колонки
     let body_div = document.createElement("div");
     body_div.dataset.columnbody = item.id;
+    body_div.dataset.columntitle = item.title
     body_div.addEventListener("dragover", dragOver)
     body_div.addEventListener("drop", dropCard)
     
