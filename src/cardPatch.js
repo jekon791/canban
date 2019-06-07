@@ -19,7 +19,7 @@ export function loadTargetCard(e) {
       let getTitleColumn = parentBtn
         .closest("[data-columntitle]")
         .getAttribute("data-columntitle");
-      console.log(getTitleColumn);
+      //console.log(getTitleColumn);
       idColumn.innerText = "Колонка" + " " + getTitleColumn;
       btn.setAttribute("value", item.id);
     });
@@ -51,7 +51,7 @@ export function seeOverlayPatch() {
     ? (elDivPatch.style.display = "block")
     : (elDivPatch.style.display = "none");
 }
-
+//Изменение текста карточки в DOM
 function editCard(arr) {
   let elParagrafInCard = document
     .querySelector(`[data-card='${arr.id}']`)
