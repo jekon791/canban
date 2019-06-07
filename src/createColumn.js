@@ -4,24 +4,24 @@ export function createDOMcolumn(array) {
   array.forEach(function(item, index) {
 
     //Тут записывается id колоночки
-    let text_id = document.createElement("p");
-    text_id.append(item.id);
+    let textId = document.createElement("p");
+    textId.append(item.id);
 
     //Тут записывается title колоночки
-    let text_title = document.createElement("p");
-    text_title.append(item.title);
+    let textTitle = document.createElement("p");
+    textTitle.append(item.title);
     
     //Сюда будут вставляться карточки предназначеные для этой колонки
-    let body_div = document.createElement("div");
-    body_div.dataset.columnbody = item.id;
-    body_div.dataset.columntitle = item.title
-    body_div.addEventListener("dragover", dragOver)
-    body_div.addEventListener("drop", dropCard)
+    let divBody = document.createElement("div");
+    divBody.dataset.columnbody = item.id;
+    divBody.dataset.columntitle = item.title
+    divBody.addEventListener("dragover", dragOver)
+    divBody.addEventListener("drop", dropCard)
     
     //Весь этот мусор собирается в одну DIV_box
     let div = document.createElement("div");
-    div.append(text_id, text_title);
-    div.append(body_div);
+    div.append(textId, textTitle);
+    div.append(divBody);
     div.className = "col-sm";
     div.dataset.column = item.id;
 
@@ -34,7 +34,7 @@ export function createDOMcolumn(array) {
 
 //Функция ищет изначальный DIV с событием getStart и вставляет внего колоки
 function addDom(fragment) {
-  document.querySelector("#row").appendChild(fragment);
+  document.querySelector("[data-row]").appendChild(fragment);
 }
 
 //Функция для генерации списка колонок
