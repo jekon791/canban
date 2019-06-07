@@ -25,7 +25,7 @@ export function preparation(e){
     e.preventDefault()
     seeOverlayPost()
 }
- function seeOverlayPost(){
+export function seeOverlayPost(){
     let way = document.getElementById("bodyPost")
     way.style.display == "none" ? way.style.display = 'block' :  way.style.display = 'none'  
 }
