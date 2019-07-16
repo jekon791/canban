@@ -12,7 +12,6 @@ export function chekForPositionNumber(item) {
 
 export function editPositionCard(item, position){
     console.log(item)
-    //Да, код повторяется, но так как я пишу на скорую руку, пока не придумал, как сделать этот "PATCH" более универсальным
     fetch("http://localhost:8089/api/card/" + item.id, {
       method: "PATCH",
       headers: {

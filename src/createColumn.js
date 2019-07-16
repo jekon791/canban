@@ -41,7 +41,6 @@ function addDom(fragment) {
 function createOptions(item){
   let elm = document.createElement("option")
       elm.setAttribute("value", item.id)
-      //elm.dataset.column.id = item.id
       elm.append(item.title)  
       document.querySelector("#selectId").append(elm)
 }
