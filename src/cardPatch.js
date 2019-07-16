@@ -1,6 +1,6 @@
 import { whatIsIt } from "./createCards";
 
-//Получение id карточки, её загрузки из сервере и отображение
+//Получение id карточки, её загрузки из сервера и отображение
 export function loadTargetCard(e) {
   let parentBtn = e.target.parentNode;
   let cardId = parentBtn.getAttribute("data-card");
@@ -51,6 +51,7 @@ export function seeOverlayPatch() {
     ? (elDivPatch.style.display = "block")
     : (elDivPatch.style.display = "none");
 }
+
 //Изменение текста карточки в DOM
 function editCard(arr) {
   let elParagrafInCard = document
